@@ -13,7 +13,7 @@ return new class extends Migration {
             $table->id();
             $table->bigInteger('auto_id')->unsigned();
             $table->date('fecha');
-            $table->text('desripcion');
+            $table->text('descripcion');
             $table->enum('tipo',['alta velocidad', 'doble fila','alcoholemia','falta de documentacion']);
             $table->timestamps();
 
