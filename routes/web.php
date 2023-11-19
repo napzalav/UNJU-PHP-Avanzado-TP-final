@@ -33,8 +33,8 @@ use Inertia\Inertia;
 // });
 
 Route::controller(HomeController::class)->group(function(){
-    Route::get('/', index)->name('home');
-    Route::get('automotores/index', {post:slug})
+    Route::get('/', 'index')->name('home');
+    Route::get('Auto.index');
 });
 
 Route::get('/dashboard', function () {
