@@ -3,7 +3,7 @@
 @section('title', 'Titulares')
 @section('content')
 <div class="d-grid gap-2">
-    <button class="btn btn-primary" type="button"><a href="/automotores/create"><i>Nuevo</i></a></button>
+    <button class="btn btn-primary" type="button"><a href="/titulares/create"><i>Nuevo</i></a></button>
 </div>
 
     <table class="table table-striped table-hover">

@@ -37,25 +37,29 @@ use Inertia\Inertia;
 
 Route::controller(HomeController::class)->group(function(){
     Route::get('/', 'index')->name('home');
-    Route::get('Home.index');
+    // Route::get('Home.index');
 });
 
-Route::controller(AutosController::class)->group(function(){
-    Route::get('/automotores', 'index')->name('index');
-    Route::get('Auto.index');
-});
+// Route::controller(AutosController::class)->group(function(){
+//     Route::get('/automotores', 'index')->name('index');
+//     Route::get('Auto.index');
+// });
 
-Route::controller(TitularesController::class)->group(function(){
-    Route::get('/titulares', 'index')->name('index');
-    Route::get('Titular.index');
-});
+Route::resource('automotores', AutosController::class);
 
-Route::controller(InfraccionesController::class)->group(function(){
-    Route::get('/infracciones', 'index')->name('index');
-    Route::get('Infraccion.index');
-});
+// Route::controller(TitularesController::class)->group(function(){
+//     Route::get('/titulares', 'index')->name('index');
+//     Route::get('Titular.index');
+// });
 
+Route::resource('titulares', TitularesController::class);
 
+// Route::controller(InfraccionesController::class)->group(function(){
+//     Route::get('/infracciones', 'index')->name('index');
+//     Route::get('Infraccion.index');
+// });
+
+Route::resource('infracciones', InfraccionesController::class);
 
 
 

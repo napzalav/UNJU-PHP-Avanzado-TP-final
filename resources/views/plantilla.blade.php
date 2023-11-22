@@ -28,7 +28,7 @@
             text-align: center;
         }
 
-        .contenedor{
+        .contenedor {
             display: flex;
             justify-content: space-around;
 
@@ -44,20 +44,26 @@
             text-align: center;
         }
 
-        a{
+        a {
             text-decoration: none;
             color: aliceblue;
         }
 
-        .detalles{
+        .detalles {
             display: flex;
             justify-content: space-around;
         }
 
-        h2{
+        h2 {
             color: aliceblue;
-            background: linear-gradient(90deg, rgba(70,6,107,1) 0%, rgba(12,20,94,1) 70%);
+            background: linear-gradient(90deg, rgba(70, 6, 107, 1) 0%, rgba(12, 20, 94, 1) 70%);
             border-radius: 10px;
+        }
+
+        .formulario {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
     </style>
 </head>
@@ -131,6 +137,8 @@
         <div class="contenedor">
             @yield('content')
         </div>
+
+        @yield('formulario')
 
     </main>
 

@@ -12,7 +12,7 @@ class TitularesController extends Controller
      */
     public function index()
     {
-        return view("Titular.index");
+        return view('Titular.index');
     }
 
     /**
@@ -21,6 +21,7 @@ class TitularesController extends Controller
     public function create()
     {
         //
+        return view ('Titular.create');
     }
 
     /**

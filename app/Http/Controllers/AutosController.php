@@ -20,7 +20,7 @@ class AutosController extends Controller
      */
     public function create()
     {
-        //
+        return view ('Auto.create');
     }
 
     /**
