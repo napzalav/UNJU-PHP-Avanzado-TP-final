@@ -12,7 +12,7 @@ class AutosController extends Controller
      */
     public function index()
     {
-        //
+        return view("Auto.index");
     }
 
     /**

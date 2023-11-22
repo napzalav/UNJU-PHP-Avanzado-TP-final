@@ -12,7 +12,7 @@ class InfraccionesController extends Controller
      */
     public function index()
     {
-        //
+        return view("Infraccion.index");
     }
 
     /**

@@ -1,7 +1,10 @@
 <?php
 
+use App\Http\Controllers\AutosController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\InfraccionesController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\TitularesController;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
@@ -34,17 +37,44 @@ use Inertia\Inertia;
 
 Route::controller(HomeController::class)->group(function(){
     Route::get('/', 'index')->name('home');
+    Route::get('Home.index');
+});
+
+Route::controller(AutosController::class)->group(function(){
+    Route::get('/automotores', 'index')->name('index');
     Route::get('Auto.index');
 });
 
-Route::get('/dashboard', function () {
-    return Inertia::render('Dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
-
-Route::middleware('auth')->group(function () {
-    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
-    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
-    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+Route::controller(TitularesController::class)->group(function(){
+    Route::get('/titulares', 'index')->name('index');
+    Route::get('Titular.index');
 });
 
-require __DIR__.'/auth.php';
+Route::controller(InfraccionesController::class)->group(function(){
+    Route::get('/infracciones', 'index')->name('index');
+    Route::get('Infraccion.index');
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+// Route::get('/dashboard', function () {
+//     return Inertia::render('Dashboard');
+// })->middleware(['auth', 'verified'])->name('dashboard');
+
+// Route::middleware('auth')->group(function () {
+//     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
+//     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
+//     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+// });
+
+// require __DIR__.'/auth.php';
