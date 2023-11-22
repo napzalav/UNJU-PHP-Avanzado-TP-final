@@ -12,7 +12,9 @@ class TitularesController extends Controller
      */
     public function index()
     {
-        return view('Titular.index');
+        $titulares = Titular::all();
+        return view('Titular.index', compact('titulares'));
+        // return view ('Titular.index');
     }
 
     /**
@@ -20,7 +22,6 @@ class TitularesController extends Controller
      */
     public function create()
     {
-        //
         return view ('Titular.create');
     }
 
@@ -29,38 +30,62 @@ class TitularesController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'nombre' => 'required',
+            'apellido' => 'required',
+            'dni' => 'required|unique:titulares,dni',
+            'domicilio' => 'required',
+        ]);
+
+        Titular::create($request->all());
+
+        return redirect('/titulares')->with('success', 'Titular creado correctamente');
     }
 
     /**
      * Display the specified resource.
      */
-    public function show(Titular $titular)
+    public function show($id)
     {
-        //
+        $titular = Titular::find($id);
+        return view ('Titular.detail', compact('titular'));
     }
 
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Titular $titular)
+    public function edit($id)
     {
-        //
+        $titular = Titular::find($id);
+        return view('Titular.edit', compact('titular'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Titular $titular)
+    public function update(Request $request, $id)
     {
-        //
+        $request->validate([
+            'nombre' => 'required',
+            'apellido' => 'required',
+            'dni' => 'required|unique:titulares,dni' . $id,
+            'direccion' => 'required',
+        ]);
+
+        $titular = Titular::find($id);
+        $titular->update($request->all());
+
+        return redirect('/titulares')->with('success', 'Titular actualizado correctamente');
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Titular $titular)
+    public function destroy($id)
     {
-        //
+        $titular = Titular::find($id);
+        $titular->delete();
+
+        return redirect('/titulares')->with('success', 'Titular eliminado correctamente');
     }
 }

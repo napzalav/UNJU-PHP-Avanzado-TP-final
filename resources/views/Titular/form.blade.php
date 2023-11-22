@@ -1,1 +1,1 @@
-formulario de creacioin de Titulares
+formulario de creacion de Titulares
