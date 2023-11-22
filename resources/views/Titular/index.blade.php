@@ -17,7 +17,7 @@
             </tr>
         </thead>
         <tbody>
-            @foreach ($titulares as $titular)
+            @foreach($titulares as $titular)
                 <tr>
                     <td>{{ $titular->apellido }}</td>
                     <td>{{ $titular->nombre }}</td>
@@ -26,13 +26,12 @@
                     <td>
                         <div class="btn-group" role="group" aria-label="Basic outlined example">
                             <button type="button" class="btn btn-outline-info">Ver</button>
-                            <button type="button" class="btn btn-outline-secondary">Editar</button>
+                            <a href="{{ route('titulares.edit', $titular->id) }}" class="btn btn-outline-secondary">Editar</a>
                             <button type="button" class="btn btn-outline-danger">Eliminar</button>
                         </div>
                     </td>
                 </tr>
             @endforeach
-
         </tbody>
     </table>
 

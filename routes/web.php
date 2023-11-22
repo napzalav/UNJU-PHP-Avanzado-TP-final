@@ -54,6 +54,7 @@ Route::resource('automotores', AutosController::class);
 
 Route::resource('titulares', TitularesController::class);
 // Route::post('/titulares', [TitularesController::class, 'store'])->name('titulares.store');
+Route::get('/titulares/{titular}/edit', [TitularesController::class, 'edit'])->name('titulares.edit');
 
 // Route::controller(InfraccionesController::class)->group(function(){
 //     Route::get('/infracciones', 'index')->name('index');

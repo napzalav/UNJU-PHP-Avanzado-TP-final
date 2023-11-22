@@ -22,7 +22,7 @@ class TitularesController extends Controller
      */
     public function create()
     {
-        return view ('Titular.create');
+        return view('Titular.create');
     }
 
     /**
@@ -48,7 +48,7 @@ class TitularesController extends Controller
     public function show($id)
     {
         $titular = Titular::find($id);
-        return view ('Titular.detail', compact('titular'));
+        return view('Titular.detail', compact('titular'));
     }
 
     /**
@@ -66,16 +66,16 @@ class TitularesController extends Controller
     public function update(Request $request, $id)
     {
         $request->validate([
-            'nombre' => 'required',
             'apellido' => 'required',
-            'dni' => 'required|unique:titulares,dni' . $id,
+            'nombre' => 'required',
+            'dni' => 'required|unique:titulares,dni,' . $id,
             'direccion' => 'required',
         ]);
 
         $titular = Titular::find($id);
         $titular->update($request->all());
 
-        return redirect('/titulares')->with('success', 'Titular actualizado correctamente');
+        return redirect('/titulares')->with('success', 'Titular actualizado exitosamente');
     }
 
     /**
