@@ -27,6 +27,38 @@
             justify-content: center;
             text-align: center;
         }
+
+        .contenedor{
+            display: flex;
+            justify-content: space-around;
+
+        }
+
+        .border {
+            height: 369px;
+            width: 290px;
+            background: transparent;
+            border-radius: 10px;
+            transition: border 1s;
+            position: relative;
+            text-align: center;
+        }
+
+        a{
+            text-decoration: none;
+            color: aliceblue;
+        }
+
+        .detalles{
+            display: flex;
+            justify-content: space-around;
+        }
+
+        h2{
+            color: aliceblue;
+            background: linear-gradient(90deg, rgba(70,6,107,1) 0%, rgba(12,20,94,1) 70%);
+            border-radius: 10px;
+        }
     </style>
 </head>
 
@@ -70,8 +102,8 @@
                     </li>
 
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="/infracciones" role="button" data-bs-toggle="dropdown"
-                            aria-expanded="false">Infracciones</a>
+                        <a class="nav-link dropdown-toggle" href="/infracciones" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">Infracciones</a>
                         <ul class="dropdown-menu">
                             <li><a class="dropdown-item" href="/infracciones/create">Crear Infracción</a></li>
                             <li>
@@ -92,9 +124,13 @@
     </header>
 
     <main>
-        <h1>@yield('title')</h1>
+        <div>
+            <h1>@yield('title')</h1>
+        </div>
 
-        @yield('content')
+        <div class="contenedor">
+            @yield('content')
+        </div>
 
     </main>
 

@@ -1,28 +1,47 @@
 @extends('plantilla')
 
-@section('title', 'Home')
+@section('title', 'Municipalidad de San Martin')
 @section('content')
 
-    {{-- <div class="card-deck">
-        @foreach ($noticias as $noticia)
-            <div class="row row-cols-1 row-cols-sm-2 g-4" style="justify-content: center; padding:5px">
-                <div class="col">
-                    <div class="card h-100">
-                        <img src="{{ $noticia['imagen'] }}" class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <h5 class="card-title">{{ $noticia['title'] }}</h5>
-                            <p class="card-text">{{ $noticia['cuerpo'] }}</p>
-                        </div>
-                        <div class="card-footer">
-                            <small class="text-body-secondary">Last updated 3 mins ago</small>
-                        </div>
-                        <a href="/noticias/details" class="btn btn-primary">Ver detalle</a>
-                        <a href="{{ route('noticia', $noticia['slug']) }}" class="btn btn-success">Ver detalle desde con slug</a>
-                    </div>
-                </div>
-            </div>
-        @endforeach
-    </div> --}}
 
-    {{-- </div> --}}
+    <div class="border"
+        style="
+    background: url('https://cervantesgas.com.ar/wp-content/uploads/conoce-los-derechos-y-responsabilidades-del-propietario-de-un-auto-por-patente.jpg');
+    background-size: cover;
+">
+        <h2>Titulares</h2>
+        <div class="detalles">
+            <button type="button" class="btn btn-primary"><a href="/titulares"><i>Ver todos</i></a>
+            </button>
+            <button type="button" class="btn btn-success"><a href="/titulares/create"><i>Nuevo</i></a></button>
+        </div>
+    </div>
+
+    <div class="border"
+        style="
+    background: url('https://img.freepik.com/fotos-premium/fila-autos-estacionados-estacionamiento-ia-generativa_97167-1884.jpg');
+    background-size: cover;
+">
+        <h2>Automotores</h2>
+        <div class="detalles">
+            <button type="button" class="btn btn-primary"><a href="/automotores"><i>Ver todos</i></a>
+            </button>
+            <button type="button" class="btn btn-success"><a href="/automotores/create"><i>Nuevo</i></a></button>
+        </div>
+    </div>
+
+    <div class="border"
+        style="
+    background: url('https://a0.cdnfan.com/images/M/2/3/1/1/multas_hd_145702.jpg');
+    background-size: cover;
+">
+        <h2>Infracciones</h2>
+        <div class="detalles">
+            <button type="button" class="btn btn-primary"><a href="/infracciones"><i>Ver todos</i></a>
+            </button>
+            <button type="button" class="btn btn-success"><a href="/infracciones/create"><i>Nuevo</i></a></button>
+        </div>
+    </div>
+
+
 @endsection
