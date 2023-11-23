@@ -17,7 +17,7 @@
             </tr>
         </thead>
         <tbody>
-            @foreach($titulares as $titular)
+            @foreach ($titulares as $titular)
                 <tr>
                     <td>{{ $titular->apellido }}</td>
                     <td>{{ $titular->nombre }}</td>
@@ -25,9 +25,17 @@
                     <td>{{ $titular->domicilio }}</td>
                     <td>
                         <div class="btn-group" role="group" aria-label="Basic outlined example">
-                            <button type="button" class="btn btn-outline-info">Ver</button>
-                            <a href="{{ route('titulares.edit', $titular->id) }}" class="btn btn-outline-secondary">Editar</a>
-                            <button type="button" class="btn btn-outline-danger">Eliminar</button>
+                            <button type="button" class="btn btn-outline-info"><a
+                                    href="{{ route('titulares.detail', $titular->id) }}">Ver</a></button>
+                            <a href="{{ route('titulares.edit', $titular->id) }}"
+                                class="btn btn-outline-secondary">Editar</a>
+                            <form action="{{ route('titulares.destroy', $titular->id) }}" method="post"
+                                style="display:inline;"
+                                onsubmit="return confirm('¿Estás seguro de que deseas eliminar este titular?');">
+                                @csrf
+                                @method('DELETE')
+                                <button type="submit" class="btn btn-outline-danger">Eliminar</button>
+                            </form>
                         </div>
                     </td>
                 </tr>

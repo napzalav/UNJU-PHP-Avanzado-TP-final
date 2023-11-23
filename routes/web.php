@@ -55,6 +55,8 @@ Route::resource('automotores', AutosController::class);
 Route::resource('titulares', TitularesController::class);
 // Route::post('/titulares', [TitularesController::class, 'store'])->name('titulares.store');
 Route::get('/titulares/{titular}/edit', [TitularesController::class, 'edit'])->name('titulares.edit');
+Route::get('/titulares/{titular}/detail', [TitularesController::class, 'show'])->name('titulares.detail');
+Route::delete('/titulares/{titular}', [TitularesController::class, 'destroy'])->name('titulares.destroy');
 
 // Route::controller(InfraccionesController::class)->group(function(){
 //     Route::get('/infracciones', 'index')->name('index');

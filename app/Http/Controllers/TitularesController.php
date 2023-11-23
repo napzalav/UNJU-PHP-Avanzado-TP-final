@@ -86,6 +86,6 @@ class TitularesController extends Controller
         $titular = Titular::find($id);
         $titular->delete();
 
-        return redirect('/titulares')->with('success', 'Titular eliminado correctamente');
+        return redirect('/titulares')->with('success', 'Titular eliminado exitosamente');
     }
 }
