@@ -6,7 +6,7 @@
 
 @section('content')
     <div class="container">
-        <h2>Editar Automóvil</h2>
+        {{-- <h2>Editar Automóvil</h2> --}}
         <form action="{{ route('automotores.update', $auto->id) }}" method="post">
             @csrf
             @method('PUT')
@@ -47,6 +47,7 @@
                 </select>
             </div>
 
+            <a href="{{ route('automotores.index') }}" class="btn btn-secondary"><i class="fa-solid fa-backward"></i> Volver</a>
             <button type="submit" class="btn btn-primary">Actualizar Automóvil</button>
         </form>
     </div>

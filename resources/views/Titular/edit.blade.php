@@ -24,7 +24,13 @@
             <input type="text" name="direccion" class="form-control" id="direccion" value="{{ $titular->domicilio }}">
         </div>
         <br>
-        <button type="submit" class="btn btn-primary mb-2">Actualizar Titular</button>
+        <div style="
+        display: flex;
+        align-items: flex-start;
+    ">
+            <a href="{{ route('titulares.index') }}" class="btn btn-secondary"><i class="fa-solid fa-backward"></i> Volver</a>
+            <button type="submit" class="btn btn-primary mb-2">Actualizar Titular</button>
+        </div>
     </form>
 
 @endsection

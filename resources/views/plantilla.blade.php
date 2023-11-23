@@ -71,7 +71,9 @@
 <body>
     <header>
         <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
-            <a class="navbar-brand" href="https://github.com/napzalav" target="_blank">Cesar Alavila</a>
+            <a class="navbar-brand" href="https://github.com/napzalav" target="_blank"><i class="fa-brands fa-github" style="font-size: 30px;
+                margin-left: 5px;
+            "></i></a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
                 aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
