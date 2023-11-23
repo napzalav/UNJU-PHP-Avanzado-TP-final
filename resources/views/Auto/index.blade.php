@@ -4,7 +4,9 @@
 
 @section('content')
     <div class="container">
-        <h2>Lista de Automóviles</h2>
+        {{-- <h2>Lista de Automóviles</h2> --}}
+        <button class="btn btn-primary" type="button"><a href="/automotores/create"><i>Nuevo Automotor</i></a></button>
+
         <table class="table table-striped">
             <thead>
                 <tr>
@@ -17,7 +19,7 @@
                 </tr>
             </thead>
             <tbody>
-                @foreach($autos as $auto)
+                @foreach ($autos as $auto)
                     <tr>
                         <td>{{ $auto->titular->apellido }}, {{ $auto->titular->nombre }}</td>
                         <td>{{ $auto->marca }}</td>
@@ -26,10 +28,12 @@
                         <td>{{ $auto->tipo }}</td>
                         <td>
                             <a href="{{ route('automotores.edit', $auto->id) }}" class="btn btn-warning">Editar</a>
-                            <form action="{{ route('automotores.destroy', $auto->id) }}" method="post" style="display: inline;">
+                            <form action="{{ route('automotores.destroy', $auto->id) }}" method="post"
+                                style="display: inline;">
                                 @csrf
                                 @method('DELETE')
-                                <button type="submit" class="btn btn-danger" onclick="return confirm('¿Estás seguro?')">Eliminar</button>
+                                <button type="submit" class="btn btn-danger"
+                                    onclick="return confirm('¿Estás seguro?')">Eliminar</button>
                             </form>
                             <a href="{{ route('automotores.show', $auto->id) }}" class="btn btn-info">Ver</a>
                         </td>

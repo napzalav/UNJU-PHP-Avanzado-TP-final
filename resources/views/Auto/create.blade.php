@@ -2,7 +2,7 @@
 
 @extends('plantilla')
 
-@section('title', 'Crear Automóvil')
+@section('title', 'Crear Automotor')
 @section('formulario')
 
     <form action="{{ route('automotores.store') }}" method="post" class="formulario">
@@ -43,7 +43,7 @@
         </div>
 
         <br>
-        <button type="submit" class="btn btn-primary mb-2">Crear Automóvil</button>
+        <button type="submit" class="btn btn-primary mb-2">Crear Automotor</button>
     </form>
 
 @endsection
