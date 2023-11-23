@@ -16,4 +16,9 @@ class Titular extends Model
         // '_token',
     ];
     protected $table = 'titulares';
+
+    public function autos()
+    {
+        return $this->hasMany(Auto::class, 'titular_id');
+    }
 }

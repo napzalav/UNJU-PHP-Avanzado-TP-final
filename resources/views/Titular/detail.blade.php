@@ -6,7 +6,8 @@
         <div class="card mb-3">
             <img class="card-img-top"
                 src="https://play-lh.googleusercontent.com/HKtQ5WjczxJz5lffo1tIR_5pgxVcv4J9EXEdAZFLR8pB55oHYSifXfmPcL2jgsQ75g"
-                alt="Card image cap" style="height: 320px;
+                alt="Card image cap"
+                style="height: 320px;
                 width: 320px;
                 background-size: cover;">
             <div class="card-body">
@@ -14,6 +15,13 @@
                 <li><strong>DNI:</strong> {{ $titular->dni }}</li>
                 <li><strong>Dirección:</strong> {{ $titular->domicilio }}</li>
                 <br>
+
+                <li><strong>Vehículos registrados: </strong> {{ $titular->autos->count() }}</li>
+                <li><strong>Infracciones registradas: </strong>
+                    {{ $titular->autos->sum(function ($auto) {return $auto->infracciones->count();}) }}</li>
+                <!-- Utilizo la relación autos para contar los vehículos y sumar las infracciones -->
+                <br>
+
                 <p class="card-text"><small class="text-muted">Creado el: {{ $titular->created_at }}</small></p>
                 <p class="card-text"><small class="text-muted">Última modificación: {{ $titular->updated_at }}</small>
                 </p>
@@ -22,12 +30,16 @@
 
         {{-- agregar la botonera para editar y eliminar --}}
         <div>
-            <a href="{{ route('titulares.index') }}" class="btn btn-secondary"><i class="fa-solid fa-backward"></i> Volver</a>
-            <a href="{{ route('titulares.edit', $titular->id) }}" class="btn btn-warning"><i class="fa-solid fa-pen-to-square"></i> Editar</a>
+            <a href="{{ route('titulares.index') }}" class="btn btn-secondary"><i class="fa-solid fa-backward"></i>
+                Volver</a>
+            <a href="{{ route('titulares.edit', $titular->id) }}" class="btn btn-warning"><i
+                    class="fa-solid fa-pen-to-square"></i> Editar</a>
             <form action="{{ route('titulares.destroy', $titular->id) }}" method="post" style="display: inline;">
                 @csrf
                 @method('DELETE')
-                <button type="submit" class="btn btn-danger" onclick="return confirm('¿Estás seguro que desea eliminar este Titular?')"><i class="fa-solid fa-trash"></i> Eliminar</button>
+                <button type="submit" class="btn btn-danger"
+                    onclick="return confirm('¿Estás seguro que desea eliminar este Titular?')"><i
+                        class="fa-solid fa-trash"></i> Eliminar</button>
             </form>
         </div>
     </div>
