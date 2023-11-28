@@ -54,11 +54,11 @@ Route::resource('automotores', AutosController::class);
 //     Route::get('/titulares', 'index')->name('index');
 //     Route::get('Titular.index');
 // });
-Route::resource('titulares', TitularesController::class);
 // Route::post('/titulares', [TitularesController::class, 'store'])->name('titulares.store');
-Route::get('/titulares/{titular}/edit', [TitularesController::class, 'edit'])->name('titulares.edit');
-Route::get('/titulares/{titular}/detail', [TitularesController::class, 'show'])->name('titulares.detail');
-Route::delete('/titulares/{titular}', [TitularesController::class, 'destroy'])->name('titulares.destroy');
+Route::resource('titulares', TitularesController::class);
+// Route::get('/titulares/{titular}/edit', [TitularesController::class, 'edit'])->name('titulares.edit');
+// Route::get('/titulares/{titular}/detail', [TitularesController::class, 'show'])->name('titulares.detail');
+// Route::delete('/titulares/{titular}', [TitularesController::class, 'destroy'])->name('titulares.destroy');
 
 
 // Route::controller(InfraccionesController::class)->group(function(){
@@ -66,6 +66,9 @@ Route::delete('/titulares/{titular}', [TitularesController::class, 'destroy'])->
 //     Route::get('Infraccion.index');
 // });
 Route::resource('infracciones', InfraccionesController::class);
+// Route::get('/infracciones/{infraccion}/edit', [InfraccionesController::class, 'edit'])->name('infracciones.edit');
+// Route::get('/infracciones/{infraccion}/detail', [InfraccionesController::class, 'show'])->name('infracciones.detail');
+// Route::delete('/infracciones/{infraccion}', [InfraccionesController::class, 'destroy'])->name('infracciones.destroy');
 
 
 

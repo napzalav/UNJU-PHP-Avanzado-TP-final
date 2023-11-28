@@ -9,7 +9,13 @@ class Auto extends Model
 {
     protected $table = 'autos';
 
-    protected $fillable = ['titular_id', 'marca', 'modelo', 'patente', 'tipo'];
+    protected $fillable = [
+        'titular_id',
+        'marca',
+        'modelo',
+        'patente',
+        'tipo'
+    ];
 
     public function titular()
     {

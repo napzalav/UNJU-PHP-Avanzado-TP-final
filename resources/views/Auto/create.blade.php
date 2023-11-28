@@ -1,5 +1,3 @@
-<!-- resources/views/AUTO/create.blade.php -->
-
 @extends('plantilla')
 
 @section('title', 'Crear Automotor')
