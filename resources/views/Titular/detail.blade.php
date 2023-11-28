@@ -16,9 +16,22 @@
                 <li><strong>Dirección:</strong> {{ $titular->domicilio }}</li>
                 <br>
 
-                <li><strong>Vehículos registrados: </strong> {{ $titular->autos->count() }}</li>
+                <li><strong>Vehículos registrados: </strong>
+                    <ul>
+                        @foreach($titular->autos as $auto)
+                            <li><a href="{{ route('automotores.show', $auto->id) }}">{{ $auto->patente }}</a></li>
+                        @endforeach
+                    </ul>
+                </li>
                 <li><strong>Infracciones registradas: </strong>
-                    {{ $titular->autos->sum(function ($auto) {return $auto->infracciones->count();}) }}</li>
+                    <ul>
+                        @foreach($titular->autos as $auto)
+                            @foreach($auto->infracciones as $infraccion)
+                                <li><a href="{{ route('infracciones.show', $infraccion->id) }}">{{ $infraccion->tipo }}</a></li>
+                            @endforeach
+                        @endforeach
+                    </ul>
+                </li>
                 <!-- Utilizo la relación autos para contar los vehículos y sumar las infracciones -->
                 <br>
 
@@ -31,7 +44,7 @@
         {{-- agregar la botonera para editar y eliminar --}}
         <div>
             <a href="{{ route('titulares.index') }}" class="btn btn-secondary"><i class="fa-solid fa-backward"></i>
-                Volver</a>
+                Ir a lista de Titulares</a>
             <a href="{{ route('titulares.edit', $titular->id) }}" class="btn btn-warning"><i
                     class="fa-solid fa-pen-to-square"></i> Editar</a>
             <form action="{{ route('titulares.destroy', $titular->id) }}" method="post" style="display: inline;">

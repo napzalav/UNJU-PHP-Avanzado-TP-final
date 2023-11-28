@@ -49,6 +49,15 @@
             color: aliceblue;
         }
 
+        .card-body li a{
+            color: blue;
+        }
+
+        h3 a,
+        p a{
+            color: blue;
+        }
+
         .detalles {
             display: flex;
             justify-content: space-around;
