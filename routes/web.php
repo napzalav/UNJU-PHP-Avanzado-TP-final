@@ -8,6 +8,7 @@ use App\Http\Controllers\TitularesController;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
+// use App\Http\Controllers\SearchController;
 
 /*
 |--------------------------------------------------------------------------
@@ -71,23 +72,13 @@ Route::resource('infracciones', InfraccionesController::class);
 // Route::delete('/infracciones/{infraccion}', [InfraccionesController::class, 'destroy'])->name('infracciones.destroy');
 
 
-
-
-
-
-
-
-
-
-
-// Route::get('/dashboard', function () {
-//     return Inertia::render('Dashboard');
-// })->middleware(['auth', 'verified'])->name('dashboard');
-
-// Route::middleware('auth')->group(function () {
-//     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
-//     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
-//     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
-// });
-
-// require __DIR__.'/auth.php';
+// <-- PARA EL BUSCADOR -->
+// Route::get('/search', [SearchController::class, 'index'])->name('search');
+// Rutas para el buscador
+// Route::get('/search', [SearchController::class, 'index'])->name('search');
+// Route::get('/search/results/{query}', [SearchController::class, 'results'])->name('search.results');
+// Route::get('/search', [SearchController::class, 'index'])->name('search');
+// Route::get('/search/{query}', [SearchController::class, 'search'])->name('search.results');
+// Route::get('/search', [SearchController::class, 'index'])->name('search.index');
+// Route::get('/search/results/{query}', [SearchController::class, 'search'])->name('search.results');
+// Route::resource('search', SearchController::class);
