@@ -12,7 +12,8 @@ class TitularesController extends Controller
      */
     public function index()
     {
-        $titulares = Titular::all();
+        $titulares = Titular::latest()->paginate(10);
+        // $titulares = Titular::all();
         return view('Titular.index', compact('titulares'));
         // return view ('Titular.index');
     }
