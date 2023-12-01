@@ -5,7 +5,8 @@
 
     <form action="{{ route('titulares.update', $titular->id) }}" method="post" class="formulario">
         @csrf
-        @method('PUT') {{-- Utiliza el método PUT para la actualización --}}
+        {{-- Utiliza el método PUT para la actualización --}}
+        @method('PUT')
 
         <div class="form-group">
             <label for="apellido">Apellido</label>

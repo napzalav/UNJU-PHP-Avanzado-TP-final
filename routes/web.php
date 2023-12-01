@@ -49,12 +49,6 @@ require __DIR__ . '/auth.php';
 
 
 
-
-// Route::get("/", function () {
-//     return view ('Home.index');
-// });
-
-
 // Route::get('/', function () {
 //     return Inertia::render('Welcome', [
 //         'canLogin' => Route::has('login'),
@@ -106,8 +100,6 @@ require __DIR__ . '/auth.php';
 
 
 // <-- PARA EL BUSCADOR -->
-// Route::get('/search', [SearchController::class, 'index'])->name('search');
-// Rutas para el buscador
 // Route::get('/search', [SearchController::class, 'index'])->name('search');
 // Route::get('/search/results/{query}', [SearchController::class, 'results'])->name('search.results');
 // Route::get('/search', [SearchController::class, 'index'])->name('search');

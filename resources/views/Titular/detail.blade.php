@@ -24,6 +24,7 @@
                     </ul>
                 </li>
                 <li><strong>Infracciones registradas: </strong>
+                    <!-- Utilizo la relación autos para contar los vehículos y sumar las infracciones -->
                     <ul>
                         @foreach($titular->autos as $auto)
                             @foreach($auto->infracciones as $infraccion)
@@ -32,7 +33,6 @@
                         @endforeach
                     </ul>
                 </li>
-                <!-- Utilizo la relación autos para contar los vehículos y sumar las infracciones -->
                 <br>
 
                 <p class="card-text"><small class="text-muted">Creado el: {{ $titular->created_at }}</small></p>
@@ -41,7 +41,7 @@
             </div>
         </div>
 
-        {{-- agregar la botonera para editar y eliminar --}}
+        {{-- botonera para editar y eliminar --}}
         <div>
             <a href="{{ route('titulares.index') }}" class="btn btn-secondary"><i class="fa-solid fa-backward"></i>
                 Ir a lista de Titulares</a>

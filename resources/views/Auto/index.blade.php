@@ -4,7 +4,6 @@
 
 @section('content')
     <div class="container">
-        {{-- <h2>Lista de Automóviles</h2> --}}
         <button class="btn btn-primary" type="button"><a href="/automotores/create"><i class="fa-solid fa-plus"></i> Nuevo Automotor</a></button>
 
         <table class="table table-striped table-hover">

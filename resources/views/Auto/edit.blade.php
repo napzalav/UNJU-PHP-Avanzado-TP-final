@@ -1,12 +1,9 @@
-<!-- resources/views/AUTO/edit.blade.php -->
-
 @extends('plantilla')
 
 @section('title', 'Editar Automóvil')
 
 @section('content')
     <div class="container">
-        {{-- <h2>Editar Automóvil</h2> --}}
         <form action="{{ route('automotores.update', $auto->id) }}" method="post">
             @csrf
             @method('PUT')

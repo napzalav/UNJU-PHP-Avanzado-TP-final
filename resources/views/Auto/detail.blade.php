@@ -17,7 +17,6 @@
                 background-size: cover;
             ">
             <div class="card-body">
-                {{-- <h3 class="card-title">Titular: {{ $auto->titular->apellido }}, {{ $auto->titular->nombre }}</h3> --}}
                 <h3 class="card-title">Titular:
                     <a href="{{ route('titulares.show', $auto->titular->id) }}">{{ $auto->titular->apellido }},
                         {{ $auto->titular->nombre }}</a>

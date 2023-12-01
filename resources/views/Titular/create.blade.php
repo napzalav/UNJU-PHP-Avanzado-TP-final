@@ -2,7 +2,6 @@
 @section('title', 'Alta de Titular')
 @section('formulario')
 
-{{-- {{ route('titulares.store') }} --}}
     <form action="{{ route('titulares.store') }}" method="post" class="formulario">
         @csrf
         <div class="form-group">
